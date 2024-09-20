@@ -3,7 +3,7 @@ import axios from "axios";
 export default function AtualizaProduto({carregaProdutos, produto}) {
     return (
         <div className='card'>
-            <h3 className='titulo'>Cadastro de Produto</h3>
+            <h3 className='titulo'>AtualizaProduto de Produto</h3>
             <form>
                 <label>Nome:</label>
                 <input type='text' id='nome' name='nome' value={produto.nome}>                

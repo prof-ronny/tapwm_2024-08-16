@@ -1,9 +1,12 @@
 import axios from 'axios';
 import '../../index.css';
 import {MdDelete} from 'react-icons/md';
+import {MdUpdate} from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 
 const Produto = ({valor, carregaProdutos}) => {
+    const navigate = useNavigate();
 
     
     return (
@@ -13,7 +16,8 @@ const Produto = ({valor, carregaProdutos}) => {
             <p className='descricao'>{valor.descricao}</p>
             <img src={valor.foto} alt='Imagem do Produto'
              className='imagem'></img>
-            <MdDelete className='icone' onClick={()=>remover(valor.id)}></MdDelete>             
+            <MdDelete className='icone' onClick={()=>remover(valor.id)}></MdDelete>
+            <MdUpdate className='icone' onClick={()=>atualizar(valor)}></MdUpdate>             
         </div>
     );
 
@@ -25,6 +29,10 @@ const Produto = ({valor, carregaProdutos}) => {
             })
         
         ;
+    }
+
+    function atualizar(valor){
+        navigate('/AtualizaProduto/', {state: valor});    
     }
     
 

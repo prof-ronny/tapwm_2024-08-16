@@ -1,6 +1,8 @@
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
-export default function CadastroProduto({carregaProdutos}) {
+export default function CadastroProduto({}) {
+    const navigator = useNavigate();
     return (
         <div className='card'>
             <h3 className='titulo'>Cadastro de Produto</h3>
@@ -37,7 +39,7 @@ export default function CadastroProduto({carregaProdutos}) {
         axios.post('https://app-api-tapwm.onrender.com/api/produtos', 
             produto)
         .then(()=>{
-            carregaProdutos();
+            navigator.push('/');
         });
     }
 }

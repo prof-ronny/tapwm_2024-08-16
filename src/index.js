@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PaginaCadastroProd from './Paginas/PaginaCadastroProd';
+import PaginaAtulizaProd from './Paginas/PaginaAtualizaProd';
 
 
 
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/CadastroProduto"
          element={<PaginaCadastroProd />} />
+         <Route path="/AtualizaProduto" element={<PaginaAtulizaProd />} />
         
       </Routes>
     </BrowserRouter>
